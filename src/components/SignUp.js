@@ -10,7 +10,7 @@ function SignUp({ onSignUpSuccess }) {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://example.com/signup', { email, password });
+      const response = await axios.post('https://shaperface-m7pi7y8xz-phaks323s-projects.vercel.app/signup', { email, password });
       alert('Signup successful!');
       onSignUpSuccess();  // Callback to update parent component's state
     } catch (error) {

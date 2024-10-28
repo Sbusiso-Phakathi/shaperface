@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
-import SignUp from './components/SignUp'; // import the SignUp component
-import SignIn from './components/SignIn'; // import the SignIn component
+import SignUp from './SignUp'; // import the SignUp component
+import SignIn from './SignIn'; // import the SignIn component
 
 function FaceRecognition() {
   const webcamRef = useRef(null);

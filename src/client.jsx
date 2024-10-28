@@ -1,48 +1,42 @@
-import React, { useRef, useState, useEffect } from 'react';
+// FaceRecognition.js
+import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
 
 function FaceRecognition() {
   const webcamRef = useRef(null);
   const [faces, setFaces] = useState([]);
-  const captureInterval = 3000; 
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      captureAndRecognize();
-    }, captureInterval);
-
-    return () => clearInterval(interval); 
-  }, []);
 
   const captureAndRecognize = async () => {
     const imageSrc = webcamRef.current.getScreenshot();
 
-    if (!imageSrc) return;
-
+    // Convert base64 image to Blob
     const blob = await fetch(imageSrc).then(res => res.blob());
 
+    // Create FormData to send the image file
     const formData = new FormData();
     formData.append('image', blob, 'captured_image.jpg');
 
     try {
-      const response = await axios.post('http://127.0.0.1:5002/recognize-face', formData, {
+      // Send the image to the backend
+      const response = await axios.post('http://127.0.0.1:5003/recognize-face', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
       setFaces(response.data.faces);
       console.log(response.data);
+
     } catch (error) {
       console.error('Error recognizing face:', error);
-      console.log()
     }
-  };
+  };z
 
   return (
     <div>
-      <h1>Shaper Face</h1>
+      <h1>Face Recognition</h1>
       <Webcam audio={false} ref={webcamRef} screenshotFormat="image/jpeg" />
-      
+      <button onClick={captureAndRecognize}>Capture & Recognize</button>
+
       {faces.length > 0 && (
         <div>
           <h2>Detected Faces:</h2>

@@ -1,7 +1,7 @@
 // src/App.js
 
 import React from 'react';
-import FaceRecognition from 'FaceRecognition';
+import FaceRecognition from './FaceRecognition';
 
 function App() {
   return (

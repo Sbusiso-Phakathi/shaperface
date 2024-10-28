@@ -26,7 +26,7 @@ function FaceRecognition() {
     formData.append('image', blob, 'captured_image.jpg');
 
     try {
-      const response = await axios.post('http://127.0.0.1:5002/recognize-face', formData, {
+      const response = await axios.post('https://miserable-tomb-97xvjqq975r39x6x-5000.app.github.dev:5000/recognize-face', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

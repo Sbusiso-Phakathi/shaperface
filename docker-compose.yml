@@ -1,1 +1,11 @@
 
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000" # Map container port to Codespace port
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: development

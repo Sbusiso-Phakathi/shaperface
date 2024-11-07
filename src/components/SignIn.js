@@ -10,7 +10,7 @@ function SignIn({ onSignInSuccess }) {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://example.com/signin', { email, password });
+      // const response = await axios.post('https://example.com/signin', { email, password });
       alert('Signin successful!');
       onSignInSuccess();  // Callback to update parent component's state
     } catch (error) {

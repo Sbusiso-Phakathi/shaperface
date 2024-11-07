@@ -1,0 +1,131 @@
+/* Container Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.webcam {
+    width: 600px;
+    height: 600px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+.logo {
+  width: 20px;
+  height: 20px;
+  background-color: #4444FF; /* Example color */
+  border-radius: 4px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Scanner Frame */
+.scanner-frame {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+  background: #2d2d2d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-top-left,
+.frame-top-right,
+.frame-bottom-left,
+.frame-bottom-right {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+}
+
+.frame-top-left {
+  top: 160px;
+  left: 160px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.frame-top-right {
+  top: 160px;
+  right: 160px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.frame-bottom-left {
+  bottom: 160px;
+  left: 160px;
+  border-right: none;
+  border-top: none;
+}
+
+.frame-bottom-right {
+  bottom: 160px;
+  right: 160px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Scanning Indicator */
+.scanning-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #00cc99;
+  font-size: 16px;
+  position: absolute;
+}
+
+.loading-circle {
+  margin-top: 8px;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 204, 153, 0.5);
+  border-top: 4px solid #00cc99;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

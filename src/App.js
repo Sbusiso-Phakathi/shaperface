@@ -1,12 +1,12 @@
 // src/App.js
 
 import React from 'react';
-import FaceRecognition from './components/FaceRecognition';
+import Test from '../src/components/Test';
 
 function App() {
   return (
     <div className="App">
-      <FaceRecognition />
+      <Test />
     </div>
   );
 }

@@ -1,0 +1,492 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaper App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .square {
+      width: 20px;
+      height: 20px;
+      margin: 4px;
+      display: inline-block;
+    }
+
+    .square1 { background-color: #2b3d8f; } /* Dark blue */
+    .square2 { background-color: #82d6e6; } /* Teal */
+    .square3 { background-color: #ff8a2f; } /* Orange */
+    .square4 { background-color: #f2d1cf; } /* Light pink */
+
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .title span {
+      color: #00a6e7; /* Highlight color */
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="square square1"></div>
+      <div class="square square2"></div>
+      <div class="square square3"></div>
+      <div class="square square4"></div>
+    </div>
+    <div class="title">Shape<span style="color: #00a6e7;">r</span></div>
+    <div class="subtitle">POWERED BY THE DIGITAL ACADEMY</div>
+  </div>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaper App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .square {
+      width: 20px;
+      height: 20px;
+      margin: 4px;
+      display: inline-block;
+    }
+
+    .square1 { background-color: #2b3d8f; } /* Dark blue */
+    .square2 { background-color: #82d6e6; } /* Teal */
+    .square3 { background-color: #ff8a2f; } /* Orange */
+    .square4 { background-color: #f2d1cf; } /* Light pink */
+
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .title span {
+      color: #00a6e7; /* Highlight color */
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+      margin-bottom: 40px;
+    }
+
+    .access-prompt {
+      background-color: #e0e0e0;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .access-prompt h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .access-prompt p {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      padding: 10px 15px;
+      border-radius: 25px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-container label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 20px;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #00d9a5;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(14px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="square square1"></div>
+      <div class="square square2"></div>
+      <div class="square square3"></div>
+      <div class="square square4"></div>
+    </div>
+    <div class="title">Shape<span style="color: #00a6e7;">r</span></div>
+    <div class="subtitle">POWERED BY THE DIGITAL ACADEMY</div>
+    
+    <div class="access-prompt">
+      <h2>Please Allow Access To Proceed</h2>
+      <p>Turn on camera for face recognition and live location to successfully sign in</p>
+
+      <div class="toggle-container">
+        <label>Camera</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-container">
+        <label>Live Location</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      height: 400px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .face-frame {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border: 4px solid rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+    }
+
+    .instruction {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .capture-button {
+      background-color: #ffffff;
+      color: #333;
+      border: 1px solid #333;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .capture-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .capture-button img {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Face Recognition</div>
+
+    <div class="image-container">
+      <img src="face-recognition-placeholder.jpg" alt="Face Recognition Preview">
+      <div class="face-frame"></div>
+    </div>
+
+    <div class="instruction">
+      Hold your head still for at least 10 seconds to get accurate face recognition
+    </div>
+
+    <div class="capture-button">
+      <img src="camera-icon.png" alt="Camera Icon">
+      Capture
+    </div>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition</title>
+  <style>
+    /* Reset some basic styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      padding-top: 100%; /* 1:1 Aspect Ratio */
+      border-radius: 20px;
+      overflow: hidden;
+      background: url('face_image.jpg') center center/cover no-repeat; /* Replace with your image path */
+    }
+
+    .viewfinder {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border: 4px solid white;
+      box-sizing: border-box;
+    }
+
+    .success-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .recognition-text {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .sub-text {
+      font-size: 16px;
+      color: #FF7A00; /* Orange color for emphasis */
+      margin-bottom: 40px;
+    }
+
+    .home-button {
+      padding: 12px 40px;
+      font-size: 18px;
+      color: #007BFF; /* Blue text color */
+      background-color: white;
+      border: 2px solid #007BFF;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .home-button:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="title">Face Recognition</div>
+  
+  <div class="image-container">
+    <div class="viewfinder"></div>
+    <div class="success-icon">✓</div>
+  </div>
+  
+  <div class="recognition-text">Face Recognised</div>
+  <div class="sub-text">You Have Successfully Signed in as <br> Bonolo PWD</div>
+  
+  <a href="#" class="home-button">Home</a>
+</div>
+
+</body>
+</html>
